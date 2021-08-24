@@ -1,23 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Download from "./pages/Download";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useState, useEffect}  from "react";
+import Axios from 'axios';
+
+
 
 function App() {
+
+  const [logInProps, setLogInProps] = useState({token: "", user:""});
+
+
+  //on first load of site, check jwt if session is still active
+  const token = localStorage.getItem('token');
+  const apiUrl = 'http://localhost:5000'; 
+
+  const checkSess = async () => {
+    const { data } = await Axios.post(`${apiUrl}/verifytoken`,{
+      token: token
+      });
+      
+
+    if(data.token){
+      localStorage.setItem('token', data.token);
+
+      setLogInProps({user: data.user, token: data.token});
+    }
+      
+
+    return {e: data.e, token: data.token, user: data.user};
+  };
+
+  useEffect(()=>{
+    if(logInProps.token === ""){
+      checkSess();
+    }
+  }, []) 
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <style>@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,800;1,700&display=swap');</style>
+
+      
+
+      <Router>
+        <Navbar logInProps={logInProps} setLogInProps={p=>{setLogInProps(p)}} />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/download" exact component={Download} />
+          <Route path="/about" exact component={About} />
+          <Route path="/contact" exact render={(props) => (<Contact {...props} logInProps={logInProps} setLogInProps={p=>{setLogInProps(p)}}/>)} />
+        </Switch>
+        <Footer />
+      </Router>
     </div>
   );
 }

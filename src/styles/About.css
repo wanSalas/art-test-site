@@ -1,0 +1,46 @@
+.about {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #e5e5e5;
+}
+
+.aboutTop {
+  width: 100%;
+  height: 45%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.aboutBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.aboutBottom p {
+  width: 80%;
+  text-align: center;
+}
+
+.about .aboutBottom h1 {
+  font-weight: 400;
+  font-size: 70px;
+  color: black;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  transform: translateY(-40px);
+  font-family: 'Alegreya Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/* Add the animation: property to whichever element you want to animate */
+.aboutTop{
+  animation: easeInLeft 0.3s ease-out 0s normal none;
+}
