@@ -21,7 +21,7 @@ function App() {
   const apiUrl = 'http://localhost:5000'; 
 
   const checkSess = async () => {
-    const { data } = await Axios.post(`${apiUrl}/verifytoken`,{
+    const { data } = await Axios.post(`${apiUrl}/auth/verifytoken`,{
       token: token
       });
       

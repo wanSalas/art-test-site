@@ -16,9 +16,12 @@ function Contact(props) {
   
   const [isVerifying, setVerifying] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [sentMessage, setSentMessage] = useState(false);
+
+  const [contactFormData, setContactFormData] = useState({name: '', email: '', message:''});
 
   const checkSess = async () => {
-    const { data } = await Axios.post(`${apiUrl}/verifytoken`,{
+    const { data } = await Axios.post(`${apiUrl}/auth/verifytoken`,{
       token: token
       });
       
@@ -52,40 +55,82 @@ function Contact(props) {
     }
   }, []);
 
+  const onChangeMessage = (event) => {
+    setContactFormData({name: props.logInProps.user.name, email: props.logInProps.user.email ,message: event.target.value});
+
+    console.log(contactFormData);
+  };
+
+  const submitContactMail = (event) => {
+    Axios.post(`${apiUrl}/email/sendcontact`, {
+      name: contactFormData.name,
+      email: contactFormData.email,
+      message: contactFormData.message
+    }).then((response) => {
+      console.log(response);
+      setSentMessage(true);
+    });
+    event.preventDefault();
+
+
+  };
+
 
   return (
     <div className="contact">
       <div
-        className="leftSide"
+        className="left-side"
         style={{ backgroundImage: `url(${PizzaLeft})` }}
       ></div>
       {props.logInProps.token ? 
-      <div className="rightSide">
-        <h1 className="contactHeader"> Contact Us</h1>
 
-        <form id="contact-form" >
-          <label htmlFor="name">Full Name</label>
-          <input name="name" disabled value={props.logInProps.user.name} type="text" />
-          <label htmlFor="email">Email</label>
-          <input name="email" disabled value={props.logInProps.user.email} type="email" />
-          <label htmlFor="message">Message</label>
-          <textarea
-            rows="6"
-            placeholder="Enter message..."
-            name="message"
-            required
-          ></textarea>
-          <button> Send Message</button>
-        </form>
-      </div>
-      :
-      <div className="rightSide">
-        <div className="restrictedHeader">
-          <h2> Restricted </h2>
-          <p> Please Login to send us a message.</p>
+        <div className="right-side">
+
+        {sentMessage ?
+
+          <div>
+
+            <div className="restricted-header">
+              <h2> Message Sent! </h2>
+              <p> Thank you very much! We will be contacting you soon.</p>
+            </div>
+
+          </div>
+
+          :
+
+          <div>
+            <h1 className="contact-header"> Contact Us</h1>
+
+            <form id="contact-form" onSubmit={submitContactMail}>
+              <label htmlFor="name">Full Name</label>
+              <input name="name" disabled value={props.logInProps.user.name} type="text" />
+              <label htmlFor="email">Email</label>
+              <input name="email" disabled value={props.logInProps.user.email} type="email" />
+              <label htmlFor="message">Message</label>
+              <textarea
+                rows="6"
+                placeholder="Enter message..."
+                name="message"
+                required
+                onChange={onChangeMessage}
+              ></textarea>
+              <button> Send Message</button>
+            </form>
+          </div>
+        }
+
         </div>
 
-      </div>
+        :
+
+        <div className="right-side">
+          <div className="restricted-header">
+            <h2> Restricted </h2>
+            <p> Please Login to send us a message.</p>
+          </div>
+
+        </div>
       }
     </div>
   );

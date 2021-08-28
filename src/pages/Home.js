@@ -7,7 +7,7 @@ import "../styles/Home.css";
 function Home() {
   return (
     <div className="home" style={{ backgroundImage: `url(${BannerImage})` }}>
-      <div className="headerContainer">
+      <div className="header-container">
         <h1> ArconOS </h1>
         <p> Next-gen Linux Gaming.</p>
         <Link to="/menu">

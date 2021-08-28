@@ -5,10 +5,10 @@ function About() {
   return (
     <div className="about">
       <div
-        className="aboutTop"
+        className="about-top"
         style={{ backgroundImage: `url(${MultiplePizzas})` }}
       ></div>
-      <div className="aboutBottom">
+      <div className="about-bottom">
         <h1> ABOUT US</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime

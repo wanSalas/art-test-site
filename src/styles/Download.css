@@ -9,28 +9,28 @@
   background-color: #e5e5e5;
 }
 
-.download .arcLogo {
+.download .arc-logo {
   width: 120px;
 }
 
-.download .menuTitle {
+.download .menu-title {
   font-family: "Alegreya Sans", Helvetica;
   font-size: 60px;
 }
 
-.dlLinks ul {
+.dl-links ul {
   list-style-type: none;
   padding: 0;
 }
 
-.dlLinks li {
+.dl-links li {
   display: inline-block;
   margin-left: 5px;
   margin-right: 5px;
   font-size: 20px;
 }
 
-.menuList {
+.menu-list {
   width: 70vw;
   height: auto;
   display: grid;
@@ -40,20 +40,20 @@
 
 /* MENU ITEM STYLING */
 
-.menuItem {
+.menu-item {
   border-radius: 15px;
   width: 300px;
   height: 350px;
   margin: 20px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
-.menuItem:hover {
+.menu-item:hover {
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
   transition: 0.3s ease-in;
   cursor: pointer;
 }
 
-.menuItem div {
+.menu-item div {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   width: 100%;
@@ -63,19 +63,19 @@
   background-size: cover;
 }
 
-.menuItem h1,
-.menuItem p {
+.menu-item h1,
+.menu-item p {
   margin-left: 20px;
 }
 
 @media only screen and (max-width: 1300px) {
-  .menuList {
+  .menu-list {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media only screen and (max-width: 800px) {
-  .menuList {
+  .menu-list {
     grid-template-columns: 1fr;
   }
 }

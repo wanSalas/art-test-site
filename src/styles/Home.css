@@ -11,13 +11,13 @@
   font-family: "Alegreya Sans", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.headerContainer {
+.header-container {
   width: auto;
   margin-left: 50px;
   animation: easeInLeft 0.3s ease-out 0s normal none;
 }
 
-.headerContainer h1 {
+.header-container h1 {
   justify-content: center;
   align-items: center;
   font-size: 90px;
@@ -26,14 +26,14 @@
   color: black;
 }
 
-.headerContainer p {
+.header-container p {
   padding: 0;
   font-size: 40px;
   font-weight: lighter;
   color: black;
 }
 
-.headerContainer button {
+.header-container button {
   color: black;
   border: none;
   border-radius: 5px;
@@ -47,7 +47,7 @@
   font-size: 20px;
 }
 
-.headerContainer button:hover {
+.header-container button:hover {
   background-color: #07090a;
   cursor: pointer;
   transition: 0.3s ease-in;
@@ -59,7 +59,7 @@
     align-items: center;
   }
 
-  .headerContainer {
+  .header-container {
     margin-left: 0px;
     border-radius: 10px;
     padding: 10px;
@@ -72,24 +72,24 @@
     color: white;
   }
 
-  .headerContainer h1 {
+  .header-container h1 {
     font-size: 40px;
     height: 30px;
     color: white;
   }
 
-  .headerContainer p {
+  .header-container p {
     font-size: 30px;
     color: white;
   }
 
-  .headerContainer button {
+  .header-container button {
     background-color: white;
     color: #121619;
     margin-bottom: 30px;
   }
 
-  .headerContainer button:hover {
+  .header-container button:hover {
     background-color: rgb(225, 225, 225);
     color: #121619;
   }

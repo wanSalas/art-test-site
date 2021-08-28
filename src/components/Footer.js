@@ -8,7 +8,7 @@ import "../styles/Footer.css";
 function Footer() {
   return (
     <div className="footer">
-      <div className="socialMedia">
+      <div className="social-media">
         <InstagramIcon /> <TwitterIcon /> <FacebookIcon /> <LinkedInIcon />
       </div>
       <p> &copy; 2021 arconos.io</p>

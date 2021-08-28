@@ -80,7 +80,7 @@ function Navbar(props) {
   };
 
   const login = async () => {
-    const { data } = await Axios.post(`${apiUrl}/login`,{
+    const { data } = await Axios.post(`${apiUrl}/auth/login`,{
       username: loguname,
       password: logpassword,
       });
@@ -107,7 +107,7 @@ function Navbar(props) {
 
   const handleLogin = () => {
 
-    // Axios.post("http://localhost:5000/login", {
+    // Axios.post("http://localhost:5000/auth/login", {
     //   username: loguname,
     //   password: logpassword,
     //   }
@@ -135,7 +135,7 @@ function Navbar(props) {
   const handleRegister = () => {
     //setAnchorProfMenu(null);
     //setOpen(false);
-    Axios.post(`${apiUrl}/register`, {
+    Axios.post(`${apiUrl}/auth/register`, {
         name: regname,
         username: reguname,
         password: regpassword,
@@ -159,10 +159,10 @@ function Navbar(props) {
 
   return (
     <div className="navbar">
-      <div className="leftSide" >
+      <div className="left-side" >
         <Link to="/"> <img src={Logo} /> </Link>
       </div>
-      <div className="rightSide">
+      <div className="right-side">
         <Link to="/"> Home </Link>
         <Link to="/download"> Downloads </Link>
         <Link to="/about"> About </Link>
@@ -211,7 +211,7 @@ function Navbar(props) {
           <button 
             aria-controls="menu-appnav"
             aria-haspopup="true" 
-            className="dropMenu" 
+            className="drop-menu" 
             onClick={handleNav}
           >
             <ReorderIcon />
@@ -252,14 +252,14 @@ function Navbar(props) {
         }}
       >
         <Fade in={open}>
-          <div className='modalcontent'>
+          <div className='modal-content'>
             
             <h2 id="transition-modal-title">{loggingIn ? 'Log in to ArconOS' : 'Create new Account'}</h2>
             {/* show reg if register button is pressed */}
             {loggingIn ? 
-            <form className='modalform' noValidate autoComplete="off">
+            <form className='modal-form' noValidate autoComplete="off">
               <TextField 
-                className="modalfield" 
+                className="modal-field" 
                 id="loguname" 
                 value={loguname} 
                 onChange={(e) => {setloguname(e.target.value)}}  
@@ -267,7 +267,7 @@ function Navbar(props) {
                 variant="outlined" 
               />
               <TextField 
-                className="modalfield" 
+                className="modal-field" 
                 id="logpass" 
                 value={logpassword} 
                 onChange={(e) => {setlogpassword(e.target.value)}}  
@@ -281,9 +281,9 @@ function Navbar(props) {
               </Button>
             </form>
             :
-            <form className='modalform' noValidate autoComplete="off" action="">
+            <form className='modal-form' noValidate autoComplete="off" action="">
               <TextField 
-                className="modalfield" 
+                className="modal-field" 
                 id="regname" 
                 value={regname} 
                 onChange={(e) => {setregname(e.target.value)}} 
@@ -291,7 +291,7 @@ function Navbar(props) {
                 variant="outlined"  
               />
               <TextField 
-                className="modalfield" 
+                className="modal-field" 
                 id="regemail" 
                 value={regemail} 
                 onChange={(e) => {setregemail(e.target.value)}} 
@@ -299,7 +299,7 @@ function Navbar(props) {
                 variant="outlined" 
               />
               <TextField 
-                className="modalfield" 
+                className="modal-field" 
                 id="reguname" 
                 value={reguname} 
                 onChange={(e) => {setreguname(e.target.value)}} 
@@ -307,7 +307,7 @@ function Navbar(props) {
                 variant="outlined" 
               />
               <TextField 
-                className="modalfield" 
+                className="modal-field" 
                 id="regpass" 
                 value={regpassword} 
                 onChange={(e) => {setregpassword(e.target.value)}} 

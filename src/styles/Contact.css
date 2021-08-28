@@ -6,7 +6,7 @@
 
 
 
-.contact .leftSide {
+.contact .left-side {
   height: 100%;
   flex: 50%;
   background-position: center;
@@ -15,7 +15,7 @@
   animation: easeInLeft 0.3s ease-out 0s normal none;
 }
 
-.contact .rightSide {
+.contact .right-side {
   height: 100%;
   flex: 50%;
   display: flex;
@@ -25,7 +25,7 @@
   padding: 10px;
 }
 
-.contact .rightSide .restrictedHeader {
+.contact .right-side .restricted-header {
   font-family: "Alegreya Sans", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-weight: 10;
@@ -33,7 +33,7 @@
   margin-left: 30px;
 }
 
-.contact .rightSide .contactHeader {
+.contact .right-side .contact-header {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-weight: 10;
@@ -94,7 +94,7 @@ form button {
 
 @media only screen and (max-width: 650px) {
 
-  .contact .leftSide {
+  .contact .left-side {
     flex: 20%;
   }
 

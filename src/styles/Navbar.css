@@ -5,17 +5,17 @@
   font-family: Helvetica, sans-serif;
 }
 
-.modalcontent {
+.modal-content {
   background-color: white;
   border-radius: 10px;
   padding: 10px 20px ;
 }
 
-.modalform .modalfield {
+.modal-form .modal-field {
   margin-top: 15px;
 }
 
-.modalform button {
+.modal-form button {
   margin-top: 15px;
   align-self: flex-end;
 }
@@ -28,7 +28,7 @@
   flex-direction: row;
 }
 
-.navbar .leftSide {
+.navbar .left-side {
   flex: 50%;
   height: 100%;
   display: flex;
@@ -36,11 +36,11 @@
   padding-left: 50px;
 }
 
-.navbar .leftSide img {
+.navbar .left-side img {
   width: 50px;
 }
 
-.navbar .rightSide {
+.navbar .right-side {
   flex: 50%;
   height: 100%;
   display: flex;
@@ -54,14 +54,14 @@
   margin: 20px;
 }
 
-.navbar .rightSide button {
+.navbar .right-side button {
   background-color: transparent;
   border: none;
   color: white;
   cursor: pointer;
 }
 
-.navbar .rightSide svg {
+.navbar .right-side svg {
   font-size: 40px;
 }
 
@@ -76,47 +76,34 @@
   display: inherit;
 }
 
-.navbar #open .hiddenLinks {
-  display: inherit;
-  margin-left: 30px;
-}
-
-.navbar #close .hiddenLinks {
-  display: none;
-}
-
 .navbar #open a {
   width: 70px;
   margin: 5px;
 }
 @media only screen and (max-width: 900px) {
   
-  .navbar .leftSide {
+  .navbar .left-side {
     padding-left: 50px;
   }
 }
 
 @media only screen and (max-width: 680px) {
-  .navbar .rightSide a {
+  .navbar .right-side a {
     display: none;
   }
 
-  .navbar .rightSide {
+  .navbar .right-side {
     justify-content: flex-end;
     padding-right: 50px;
   }
 
-  .navbar .rightSide .dropMenu {
+  .navbar .right-side .drop-menu {
     display: inherit;
   }
 }
 
 @media only screen and (min-width: 680px) {
-  .navbar .rightSide .dropMenu {
-    display: none;
-  }
-
-  .hiddenLinks {
+  .navbar .right-side .drop-menu {
     display: none;
   }
 }
