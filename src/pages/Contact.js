@@ -6,7 +6,7 @@ import "../styles/Contact.css";
 
 
 let token = localStorage.getItem('token');
-const apiUrl = 'http://localhost:5000'; 
+const apiUrl = 'http://localhost:8080'; 
 
 
 

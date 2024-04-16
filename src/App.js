@@ -18,7 +18,7 @@ function App() {
 
   //on first load of site, check jwt if session is still active
   const token = localStorage.getItem('token');
-  const apiUrl = 'http://localhost:5000'; 
+  const apiUrl = 'http://localhost:8080'; 
 
   const checkSess = async () => {
     const { data } = await Axios.post(`${apiUrl}/auth/verifytoken`,{

@@ -30,5 +30,5 @@ Main dependencies list:
 
 ## Notes
 You must have MongoDB running on localhost:27017 in order for this to work out of the box. 
-Backend runs on http://localhost:5000/ by default
+Backend runs on http://localhost:8080/ by default
 React app runs on http://localhost:3000/ by default

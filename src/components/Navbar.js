@@ -16,7 +16,7 @@ import Axios from 'axios';
 
 import "../styles/Navbar.css";
 
-const apiUrl = 'http://localhost:5000'; 
+const apiUrl = 'http://localhost:8080'; 
 Axios.interceptors.request.use(
   config => {
     const { origin } = new URL(config.url);
@@ -107,7 +107,7 @@ function Navbar(props) {
 
   const handleLogin = () => {
 
-    // Axios.post("http://localhost:5000/auth/login", {
+    // Axios.post("http://localhost:8080/auth/login", {
     //   username: loguname,
     //   password: logpassword,
     //   }
@@ -125,7 +125,10 @@ function Navbar(props) {
         setAnchorProfMenu(null);
         setOpen(false);
         refreshfields();
+        localStorage.setItem("token", ret.token);
+        console.log("USER LOGGED IN")
       }else{
+        // when it fails to log in
         alert(ret.e);
       }
     });
@@ -154,6 +157,7 @@ function Navbar(props) {
     setAnchorProfMenu(null);
     setOpen(false);
     localStorage.setItem('token', '');
+    console.log("user logged out");
     props.setLogInProps( {token: "", user:""} );
   };
 
