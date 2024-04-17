@@ -8,11 +8,8 @@ function Home() {
   return (
     <div className="home" style={{ backgroundImage: `url(${BannerImage})` }}>
       <div className="header-container">
-        <h1> ArconOS </h1>
-        <p> Next-gen Linux Gaming.</p>
-        <Link to="/menu">
-          <button> DOWNLOAD </button>
-        </Link>
+        <h1> Online College Cookbook </h1>
+        <p> The website that helps College Student to not starve.</p>
       </div>
     </div>
   );

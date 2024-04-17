@@ -169,7 +169,7 @@ function Navbar(props) {
       <div className="right-side">
         <Link to="/"> Home </Link>
         <Link to="/download"> Downloads </Link>
-        <Link to="/about"> About </Link>
+        <Link to="/about"> Recipe </Link>
         <Link to="/contact"> Contact </Link>
     
         <div>
@@ -258,7 +258,7 @@ function Navbar(props) {
         <Fade in={open}>
           <div className='modal-content'>
             
-            <h2 id="transition-modal-title">{loggingIn ? 'Log in to ArconOS' : 'Create new Account'}</h2>
+            <h2 id="transition-modal-title">{loggingIn ? 'OCCB login' : 'Create new Account'}</h2>
             {/* show reg if register button is pressed */}
             {loggingIn ? 
             <form className='modal-form' noValidate autoComplete="off">

@@ -1,32 +1,50 @@
-import React from "react";
+import React ,{useState} from "react";
+import Input from '@material-ui/core/Input';
+import axios from "axios";
 import MultiplePizzas from "../assets/aboutBG.png";
 import "../styles/About.css";
+// import Form from '@material-ui/core/Form';
+import Button from '@material-ui/core/Button';
+
 function About() {
+  const [title, setTitle] = useState('');
+
+
+  function handleSubmit(){
+let data = JSON.stringify({
+  "user_userID": "1",
+  "title": title,
+  "instruction": "Cook James",
+  "ingredients": "raw james"
+});
+
+let config = {
+  method: 'post',
+  maxBodyLength: Infinity,
+  url: 'http://localhost:8080/api/recipe',
+  headers: { 
+    'Content-Type': 'application/json'
+  },
+  data : data
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
+
+  }
+
   return (
-    <div className="about">
-      <div
-        className="about-top"
-        style={{ backgroundImage: `url(${MultiplePizzas})` }}
-      ></div>
-      <div className="about-bottom">
-        <h1> ABOUT US</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-          mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-          voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-          fugiat iusto fuga praesentium optio, eaque rerum! Provident similique
-          accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut
-          molestias architecto voluptate aliquam nihil, eveniet aliquid culpa
-          officia aut! Impedit sit sunt quaerat, odit, tenetur error, harum
-          nesciunt ipsum debitis quas aliquid. Reprehenderit, quia. Quo neque
-          error repudiandae fuga? Ipsa laudantium molestias eos sapiente
-          officiis modi at sunt excepturi expedita sint? Sed quibusdam
-          recusandae alias error harum maxime adipisci amet laborum.
-          Perspiciatis minima nesciunt dolorem! Officiis iure rerum voluptates a
-          cumque velit
-        </p>
-      </div>
-    </div>
+    <>
+    <form>
+      <Input name="title" value={title} ></Input>
+      <Button type = "submit" onClick={handleSubmit}>  submit </Button>
+    </form>
+    </>
   );
 }
 

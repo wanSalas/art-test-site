@@ -24,10 +24,11 @@ function App() {
     const { data } = await Axios.post(`${apiUrl}/auth/verifytoken`,{
       token: token
       });
-      
+      console.log("Token :", token);
 
     if(data.token){
       localStorage.setItem('token', data.token);
+      console.log("newToken :", token);
 
       setLogInProps({user: data.user, token: data.token});
     }
