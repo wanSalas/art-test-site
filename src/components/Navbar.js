@@ -168,7 +168,7 @@ function Navbar(props) {
       </div>
       <div className="right-side">
         <Link to="/"> Home </Link>
-        <Link to="/download"> Downloads </Link>
+        <Link to="/download"> Feed </Link>
         <Link to="/about"> Recipe </Link>
         <Link to="/contact"> Contact </Link>
     

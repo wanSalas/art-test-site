@@ -38,10 +38,6 @@ function Contact(props) {
 
     return {e: data.e, token: data.token, user: data.user};
   };
-
-  //on open of contactform, check jwt if session is still active
-  //following code is to make sure the verification only runs once upon mounting/remounting of the component
-  //also ensures no verification request goes out in parallel
   useEffect(()=>{
     if(!mounted){
       setMounted(true);

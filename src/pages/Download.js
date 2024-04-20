@@ -16,20 +16,8 @@ function Download() {
           <li><Link to="/download"> Help </Link></li>
         </ul>
       </div>
-      <h1 className="menu-title">ArconOS Distributions</h1>
-      <p> Choose a specific distro for your use cases below.</p>
-      <div className="menu-list">
-        {OSList.map((menuItem, key) => {
-          return (
-            <MenuItem
-              key={key}
-              image={menuItem.image}
-              name={menuItem.name}
-              desc={menuItem.description}
-            />
-          );
-        })}
-      </div>
+      <h1 className="menu-title">OCCB FEEDER</h1>
+      <p> this should show the daily new recipes</p>
     </div>
   );
 }

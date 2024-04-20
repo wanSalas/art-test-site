@@ -3,7 +3,6 @@ import Input from '@material-ui/core/Input';
 import axios from "axios";
 import MultiplePizzas from "../assets/aboutBG.png";
 import "../styles/About.css";
-// import Form from '@material-ui/core/Form';
 import Button from '@material-ui/core/Button';
 
 function About() {
