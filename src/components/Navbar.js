@@ -259,7 +259,7 @@ function Navbar(props) {
           <div className='modal-content'>
             
             <h2 id="transition-modal-title">{loggingIn ? 'OCCB login' : 'Create new Account'}</h2>
-            {/* show reg if register button is pressed */}
+            {}
             {loggingIn ? 
             <form className='modal-form' noValidate autoComplete="off">
               <TextField 

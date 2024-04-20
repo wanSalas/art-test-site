@@ -14,9 +14,6 @@ import Axios from 'axios';
 function App() {
 
   const [logInProps, setLogInProps] = useState({token: "", user:""});
-
-
-  //on first load of site, check jwt if session is still active
   const token = localStorage.getItem('token');
   const apiUrl = 'http://localhost:8080'; 
 

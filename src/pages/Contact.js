@@ -99,7 +99,7 @@ function Contact(props) {
             <h1 className="contact-header"> Contact Us</h1>
 
             <form id="contact-form" onSubmit={submitContactMail}>
-              <label htmlFor="name">Full Name</label>
+              <label htmlFor="name">Email of Friend</label>
               <input name="name" disabled value={props.logInProps.user.name} type="text" />
               <label htmlFor="email">Email</label>
               <input name="email" disabled value={props.logInProps.user.email} type="email" />
